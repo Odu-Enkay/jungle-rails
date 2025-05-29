@@ -15,9 +15,21 @@
         </tr>
       </thead>
       <tbody>
+      <% if enhanced_cart.any? %>
         <% enhanced_cart.each do |item| %>
           <%= render 'item', product: item[:product], quantity: item[:quantity].to_i %>
         <% end %>
+        <% else %> 
+        <tr>
+        <td colspan="5">
+         <div class="alert alert-warning" role="alert">
+        Your cart is empty. Please add items before proceeding to checkout.
+        </div>
+        <%= link_to "Home", root_path, class:"btn btn-primary mt-3" %>
+        </td> </tr>
+        <% end %>
+      
+        
       </tbody>
       <tfoot>
         <tr>
@@ -25,7 +37,7 @@
             TOTAL:
           </th>
           <th>
-            $<%= cart_subtotal_cents / 100.0 %>
+            <%= humanized_money_with_symbol cart_subtotal_cents / 100.0 %>
           </th>
         </tr>
       </tfoot>

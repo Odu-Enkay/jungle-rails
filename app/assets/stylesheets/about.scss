@@ -1,0 +1,22 @@
+// Place all the styles related to the About controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 16px;
+  padding:20px;
+  width: auto;
+  height: auto;
+  margin: auto;
+  border: 1px solid black
+}
+
+.abt {
+  width: 600px;
+  height: 200px;
+  border: 1px solid black;
+
+}
