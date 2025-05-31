@@ -1,19 +1,14 @@
 <tr>
   <td>
-    <%=product.image.tiny.url %>
+    <%= image_tag product.image.tiny.url %>
   </td>
   <td>
-    <strong><%=product.name %></strong>
+    <strong><%= product.name %></strong>
     <p><%= product.description %></p>
   </td>
   <td>
-    <%= humanized_money_with_symbol product.item_price %>
-  </td>
-  <td>
-    <%= product.quantity %>
-  </td>
-  <td>
-    <%= humanized_money_with_symbol product.total_price %>
-  </td>
-  <%=  @order.email %>
+  <p>Quantity: <%= line_item.quantity %></p>
+  <p>Price: <%= humanized_money_with_symbol line_item.item_price %></p>
+  <p>Total: <%= humanized_money_with_symbol line_item.total_price %></p>
+</td>
 </tr>

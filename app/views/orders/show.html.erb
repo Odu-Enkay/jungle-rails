@@ -8,7 +8,10 @@
     <h4>Thank you for your order!</h4>
   </div>
 
-    <%= render 'line_item' %>
+  <% @order.line_items.each do |line_item| %>
+    <%= render partial: 'line_item', locals: { line_item: line_item, product: line_item.product } %>
+  <% end %>
+  
     
   <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
 
