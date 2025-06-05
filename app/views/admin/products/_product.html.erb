@@ -1,6 +1,10 @@
 <tr>
-  <td>
-    <%= image_tag product.image.tiny.url %>
+<td>
+    <% if product.image&.tiny&.url.present? %>
+      <%= image_tag(product.image.tiny.url, alt: product.name) %>
+    <% else %>
+      <%= image_tag('default_product.jpg', alt: 'Default Product Image') %>
+    <% end %>
   </td>
   <td>
     <h4><%= product.name %></h4>
@@ -11,7 +15,7 @@
     <%= product.category.name %>
   </td>
   <td>
-    <%= product.price %>
+    <%= humanized_money_with_symbol product.price %>
   </td>
   <td>
     <%= product.quantity %>
