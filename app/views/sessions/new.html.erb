@@ -8,8 +8,13 @@
 
 <%= form_tag '/login' do %> 
        
-  Email: <%= text_field_tag :email %>
-  Password: <%= password_field_tag :password %>
-  <%= submit_tag "Submit" %>
+  <div> Email: <%= text_field_tag :email %> </div>
+  <div> Password: <%= password_field_tag :password %> </div>
+  <%= submit_tag "Login" %>
 
 <% end %>
+
+<div style="margin-top: 20px;">
+  <%= link_to "Signup", '/signup' %> |
+  <%= link_to "Continue as Guest", root_path %>
+</div>
