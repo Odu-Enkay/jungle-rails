@@ -6,7 +6,7 @@ RSpec.describe User, type: :model do
       @user = User.new(
         first_name: 'Nkiru',
         last_name: 'Odu',
-        email: 'nkiru@example.com',
+        email: 'test@example.com',
         password: 'password123',
         password_confirmation: 'password123' 
       )
@@ -87,34 +87,34 @@ RSpec.describe User, type: :model do
   end
 
   describe '.authenticate_with_credentials' do
-    before(:each) do
+    before do
       @user = User.create!(
-        first_name: 'Nkiruka',
+        first_name: 'Nkiru',
         last_name: 'Odu',
         email: 'nkiru@example.com',
         password: 'password123',
         password_confirmation: 'password123'
       )
     end
-
+  
     it 'authenticates with correct credentials' do
       authenticated_user = User.authenticate_with_credentials('nkiru@example.com', 'password123')
       expect(authenticated_user).to eq(@user)
     end
-
+  
     it 'does not authenticate with wrong password' do
       authenticated_user = User.authenticate_with_credentials('nkiru@example.com', 'wrongpass')
       expect(authenticated_user).to be_nil
     end
-
+  
     it 'authenticates even with email having extra spaces' do
       authenticated_user = User.authenticate_with_credentials('  nkiru@example.com  ', 'password123')
       expect(authenticated_user).to eq(@user)
     end
-
+  
     it 'authenticates with mixed case email' do
       authenticated_user = User.authenticate_with_credentials('NKiRu@ExAMPle.com', 'password123')
       expect(authenticated_user).to eq(@user)
     end
-  end
-end
+  end  
+end   
