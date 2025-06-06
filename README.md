@@ -2,6 +2,8 @@
 
 A mini e-commerce application built with Rails 6.1 for purposes of teaching Rails by example.
 
+- You can place an order as a user or guest
+- Admin can Add, update, remove products
 ## Setup
 
 1. Run `bundle install` to install dependencies
@@ -29,3 +31,6 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 - Bootstrap 5
 - PostgreSQL 9.x
 - Stripe
+
+## Smaple of Project
+[]()
