@@ -33,4 +33,8 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 - Stripe
 
 ## Smaple of Project
-[]()
+!["The Home page that diplays listed items"](https://github.com/Odu-Enkay/jungle-rails/blob/master/docs/jungle_home.png?raw=true)
+
+!["The User loign page if they choose to login](https://github.com/Odu-Enkay/jungle-rails/blob/master/docs/jungle1.png?raw=true)
+
+!["The order summary Page when the user checkout!"](https://github.com/Odu-Enkay/jungle-rails/blob/master/docs/jungle2.png?raw=true)
