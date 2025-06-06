@@ -12,7 +12,11 @@
     <%= render partial: 'line_item', locals: { line_item: line_item, product: line_item.product } %>
   <% end %>
   
-    
+  <tr>
+  <td colspan="2" style="text-align: right;"><strong>Grand Total:</strong></td>
+  <td><strong><%= humanized_money_with_symbol(@order.total) %></strong></td>
+</tr>
+
   <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
 
 </section>
